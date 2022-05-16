@@ -9,6 +9,12 @@ from pathlib import Path
 DOCS = Path(__file__).parent.parent.absolute()
 
 
+def prep_napari():
+    from subprocess import check_call
+
+    check_call("python -m pip install git+https://github.com/napari/napari.git#egg=napari[all]".split())
+
+
 def prep_npe2():
     #   some plugin docs live in npe2 for testing purposes
     from subprocess import check_call
@@ -20,6 +26,7 @@ def prep_npe2():
 
 
 def main():
+    prep_napari()
     prep_npe2()
     __import__('update_preference_docs').main()
     __import__('update_event_docs').main()

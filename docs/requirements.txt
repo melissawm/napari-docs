@@ -8,3 +8,5 @@ sphinx-external-toc
 sphinx-gallery
 matplotlib
 qtgallery
+magicgui>=0.3.6
+npe2>=0.3.0
