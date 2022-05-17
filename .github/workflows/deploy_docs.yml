@@ -43,11 +43,12 @@ jobs:
         with:
           run: make -C main/docs docs
 
-      # - name: Deploy Docs
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-      #     external_repository: melissawm/napari.github.io
-      #     publish_dir: docs/_build
-      #     publish_branch: gh-pages
-      #     cname: napari.org
+      - name: Deploy Docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          #deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          #external_repository: melissawm/napari.github.io
+          publish_dir: main/docs/_build
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          #cname: napari.org
