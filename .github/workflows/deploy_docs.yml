@@ -43,6 +43,11 @@ jobs:
           python -m pip install "napari/[all]"
           python -m pip install -r docs/requirements.txt
 
+      - name: Testing
+        run: |
+          python -c 'import napari; print(napari.__version__)'
+          python -c 'import napari.layers; print(napari.layers.__doc__)'
+
       - name: Build Docs
         uses: GabrielBB/xvfb-action@v1
         env:
