@@ -263,6 +263,10 @@ then:
 
 ![doc-continuous-integration-1](images/doc-ci-3.png)
 
+```{note}
+You can also check out a preview of your pull request documentation build using CircleCI.
+```
+
 ## 4. Submit your pull request
 
 Once you have written and previewed your document, it's time to open a pull request to [napari's docs repository](https://github.com/napari/docs) and contribute it to our codebase.
