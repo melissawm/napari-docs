@@ -18,6 +18,6 @@ jobs:
         uses: larsoner/circleci-artifacts-redirector-action@master
         with:
           repo-token: ${{ secrets.CIRCLECI_TOKEN }}
-          artifact-path: docs/_build/index.html
+          artifact-path: 0/docs/_build/index.html
           circleci-jobs: build-docs
           job-title: Check the rendered docs here!
