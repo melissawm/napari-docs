@@ -83,10 +83,11 @@ tags_extension = ["md", "rst"]
 html_theme = 'napari'
 
 # Define the json_url for our version switcher.
-json_url = "https://napari.org/version_switcher.json"
+#json_url = "https://napari.org/version_switcher.json"
+json_url = "https://raw.githubusercontent.com/melissawm/napari.github.io/gh-pages/version_switcher.json"
 
 if version == "dev":
-    version_match = "latest"
+    version_match = "dev"
 else:
     version_match = release
 
