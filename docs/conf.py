@@ -83,8 +83,8 @@ tags_extension = ["md", "rst"]
 html_theme = 'napari'
 
 # Define the json_url for our version switcher.
-#json_url = "https://napari.org/version_switcher.json"
-json_url = "https://raw.githubusercontent.com/melissawm/napari.github.io/gh-pages/version_switcher.json"
+#json_url = "https://napari.org/dev/_static/version_switcher.json"
+json_url = "https://raw.githubusercontent.com/melissawm/napari-docs/version-warning/docs/_static/version_switcher.json"
 
 if version == "dev":
     version_match = "dev"
@@ -99,7 +99,7 @@ html_theme_options = {
     "navbar_start": ["navbar-project"],
     "navbar_end": ["version-switcher", "navbar-icon-links"],
     "switcher": {
-        "json_url": "https://napari.org/version_switcher.json",
+        "json_url": json_url,
         "version_match": version_match,
     },
 }

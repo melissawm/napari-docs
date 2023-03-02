@@ -2,11 +2,13 @@
 	{
 		"name": "latest",
 		"version": "dev",
+		"description": "the development version",
 		"url": "https://napari.org/dev/"
 	},
 	{
 		"name": "stable (0.4.17)",
 		"version": "0.4.17",
+		"preferred": "true",
 		"url": "https://napari.org/stable/"
 	},
 	{
