@@ -12,6 +12,25 @@
    {% endif %}
    {% endblock %}
 
+   {% block classes %}
+   {% if classes %}
+   .. rubric:: {{ _('Classes') }}
+
+   .. autosummary::
+      :nosignatures:
+      :toctree:
+   {% for item in classes %}
+      {{ item }}
+   {%- endfor %}
+   {% endif %}
+   {% endblock %}
+
+   {% for item in attributes %}
+   .. autoattribute:: {{ fullname }}.{{ item }}
+   {%- endfor %}
+   {% endif %}
+   {% endblock %}
+
 
    {% block functions %}
    {% if functions %}
