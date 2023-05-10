@@ -2,6 +2,8 @@ Viewing a Layer
 ---------------
 
 .. autosummary::
+   :toctree:
+
    napari.view_image
    napari.view_labels
    napari.view_path
@@ -11,4 +13,8 @@ Viewing a Layer
    napari.view_tracks
    napari.view_vectors
 
-.. autosummary:: napari.Viewer
+.. autosummary::
+   :template: viewer_class.rst
+   :toctree:
+
+   napari.Viewer

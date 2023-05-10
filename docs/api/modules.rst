@@ -30,6 +30,7 @@ For those wishing to add custom functionality to their project.
    napari.utils.perf
 
 .. autosummary::
+   :template: napari_module.rst
    :toctree:
 
    napari
