@@ -1,4 +1,2 @@
 Viewing a Layer
 ---------------
-
-

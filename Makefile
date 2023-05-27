@@ -54,8 +54,9 @@ html-live: prep-docs
 		--port=0 \
 		$(SPHINXOPTS)
 
-html-noplot: clean prep-docs
-	NAPARI_APPLICATION_IPY_INTERACTIVE=0 sphinx-build -D plot_gallery=0 -b html docs/ docs/_build -D sphinx_gallery_conf.examples_dirs=$(GALLERY_PATH) $(SPHINXOPTS)
+html-noplot:
+	rm -rf docs/_build/api/napari*.rst
+	NAPARI_APPLICATION_IPY_INTERACTIVE=0 sphinx-build -vvv -D plot_gallery=0 -b html docs/ docs/_build -D sphinx_gallery_conf.examples_dirs=$(GALLERY_PATH) $(SPHINXOPTS)
 
 linkcheck-files:
 	NAPARI_APPLICATION_IPY_INTERACTIVE=0 sphinx-build -b linkcheck -D plot_gallery=0 --color docs/ docs/_build ${FILES} -D sphinx_gallery_conf.examples_dirs=$(GALLERY_PATH) $(SPHINXOPTS)
