@@ -44,6 +44,8 @@ author = 'The napari team'
 # ones.
 autosummary_generate = True
 autosummary_imported_members = True
+autosummary_ignore_module_all = False
+
 comments_config = {'hypothesis': False, 'utterances': False}
 
 # execution_allow_errors = False
@@ -66,6 +68,8 @@ extensions = [
     "sphinx_gallery.gen_gallery",
     "sphinx_tags",
 ]
+
+numpydoc_show_class_members = False
 
 external_toc_path = "_toc.yml"
 external_toc_exclude_missing = False
@@ -255,8 +259,6 @@ def get_attributes(item, obj, modulename):
 
 
 FILTERS["get_attributes"] = get_attributes
-
-autosummary_ignore_module_all = False
 
 linkcheck_anchors_ignore = [r'^!', r'L\d+-L\d+', r'r\d+', r'issuecomment-\d+']
 
