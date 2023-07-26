@@ -63,11 +63,25 @@ jobs:
           # invocation below. Locally, you should simply run make docs
           run: make -C docs docs GALLERY_PATH=../examples/
 
+      - name: Copy permanent files to appropriate folders
+        uses: nkoppel/push-files-to-another-repository@v1.1.1
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          run: |
+            echo "docs built"
+            ls -la docs/
+          source-files: 'docs/_build/index.html, docs/_build/developers'
+          destination-username: 'melissawm'
+          destination-branch: 'gh-pages'
+          destination-repository: 'napari.github.io'
+          destination-directory: 'stable'
+
       - name: Deploy Docs
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: napari/napari.github.io
+          external_repository: melissawm/napari.github.io
           publish_dir: docs/docs/_build
           publish_branch: gh-pages
           destination_dir: dev
