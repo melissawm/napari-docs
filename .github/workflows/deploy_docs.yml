@@ -71,7 +71,7 @@ jobs:
           source-files: 'docs/docs/_build/index.html, docs/docs/_build/developers'
           destination-username: 'melissawm'
           destination-branch: 'gh-pages'
-          destination-repository: 'melissawm/napari.github.io'
+          destination-repository: 'napari.github.io'
           destination-directory: 'stable'
 
       - name: Deploy Docs
