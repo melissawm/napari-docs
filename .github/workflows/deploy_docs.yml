@@ -68,9 +68,6 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          run: |
-            echo "docs built"
-            ls -la docs/docs/
           source-files: 'docs/_build/index.html, docs/_build/developers'
           destination-username: 'melissawm'
           destination-branch: 'gh-pages'
