@@ -70,7 +70,7 @@ jobs:
         with:
           run: |
             echo "docs built"
-            ls -la docs/
+            ls -la docs/docs/
           source-files: 'docs/_build/index.html, docs/_build/developers'
           destination-username: 'melissawm'
           destination-branch: 'gh-pages'
