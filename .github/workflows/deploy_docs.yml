@@ -61,7 +61,9 @@ jobs:
         with:
           # the napari-docs repo is cloned into a docs/ folder, hence the
           # invocation below. Locally, you should simply run make docs
-          run: make -C docs docs GALLERY_PATH=../examples/
+          run: |
+            make -C docs docs GALLERY_PATH=../examples/
+            ls -la docs/docs/_build
 
       - name: Copy permanent files to appropriate folders
         uses: nkoppel/push-files-to-another-repository@v1.1.1
