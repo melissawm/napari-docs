@@ -90,7 +90,8 @@ tags_extension = ["md", "rst"]
 html_theme = 'napari_sphinx_theme'
 
 # Define the json_url for our version switcher.
-json_url = "https://napari.org/dev/_static/version_switcher.json"
+# json_url = "https://napari.org/dev/_static/version_switcher.json"
+json_url = "https://melissawm.github.io/napari.github.io/dev/_static/version_switcher.json"
 
 if version == "dev":
     version_match = "latest"
@@ -302,6 +303,40 @@ def add_google_calendar_secrets(app, docname, source):
         source[0] = source[0].replace('{API_KEY}', GOOGLE_CALENDAR_API_KEY)
 
 
+def unversioned_pages(app, pagename, templatename, context, doctree):
+    """Do not add version switcher to contributing pages."""
+    if pagename.startswith('developers/'):
+        js = """
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {{
+            var versionSwitcher = document.querySelector('.version-switcher__container');
+            versionSwitcher.style.display = 'none';
+        }});
+        // Redirect to latest version always
+        //const currentVersion = document.documentURI.replace('/'+DOCUMENTATION_OPTIONS.pagename+'.html', '').split('/').pop()
+        if (DOCUMENTATION_OPTIONS.OLDVERSION == undefined) {{
+            // Coming from any other pages to /developers
+            // If we are coming from anything other than dev, store this info
+            var currentVersion = DOCUMENTATION_OPTIONS.theme_switcher_version_match;
+            DOCUMENTATION_OPTIONS.OLDVERSION = currentVersion;
+            const currentFilePath = document.documentURI;
+            console.log('Current file path', currentFilePath)
+            console.log('Current page name', DOCUMENTATION_OPTIONS.pagename)
+            console.log('Current version', currentVersion)
+            if (currentVersion !== 'latest') {{
+                const redirectPath = currentFilePath.replace(currentVersion, 'dev');
+                console.log('Redirecting to', redirectPath);
+                location.href = redirectPath;
+            }}
+        }} else {{
+            // Coming from /developers, after at least one redirect
+            var currentVersion = DOCUMENTATION_OPTIONS.OLDVERSION;
+        }}
+        </script>
+        """
+        context['body'] += js
+
+
 def setup(app):
     """Set up docs build.
 
@@ -313,6 +348,7 @@ def setup(app):
     """
     app.registry.source_suffix.pop(".ipynb", None)
     app.connect('source-read', add_google_calendar_secrets)
+    app.connect("html-page-context", unversioned_pages)
     app.connect('linkcheck-process-uri', rewrite_github_anchor)
 
 
