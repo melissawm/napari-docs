@@ -16,7 +16,7 @@ kernelspec:
 In this document, you will learn about the `napari` `vectors` layer, including
 how to display many vectors simultaneously and adjust their properties.
 
-For more information about layers, refer to [Layers at a glance](../../guides/layers).
+For more information about layers, refer to [Layers at a glance](layers-glance).
 
 ```{note}
 Vector layers can be added only programmatically, i.e., in the console, or using
@@ -119,8 +119,8 @@ you should use the `Lines` shape inside a `shapes` layer.
 
 All layers can be rendered in both 2D and 3D. One of the viewer buttons at the
 bottom of the left panel can toggle between these 2 modes.
-When in 2D, the button looks like this: ![image: 2D/3D button](../../images/3D-button.png), ready to switch to 3D mode.
-When in 3D, the button looks like this: ![image: 2D/3D button](../../images/2D-button.png), ready to switch to 2D mode.
+When in 2D, the button looks like this: ![image: 2D/3D button](../../../_static/images/3D-button.png), ready to switch to 3D mode.
+When in 3D, the button looks like this: ![image: 2D/3D button](../../../_static/images/2D-button.png), ready to switch to 2D mode.
 
 The number of dimensions sliders will be 2 or 3 less than the total number of
 dimensions of the layer, allowing you to browse volumetric timeseries data and
@@ -130,9 +130,9 @@ both 2D and 3D:
 ```{raw} html
 <figure>
   <video width="100%" controls autoplay loop muted playsinline>
-    <source src="../../_static/images/nD_vectors.webm" type="video/webm" />
-    <source src="../../_static/images/nD_vectors.mp4" type="video/mp4" />
-    <img src="../../_static/images/nD_vectors.png"
+    <source src="../../../_static/images/nD_vectors.webm" type="video/webm" />
+    <source src="../../../_static/images/nD_vectors.mp4" type="video/mp4" />
+    <img src="../../../_static/images/nD_vectors.png"
       title="Your browser does not support the video tag"
       alt="3D rendering of a vectors layer over an image."
     >
@@ -176,7 +176,7 @@ you have one vector per grid.
 Here is an example from [](../../gallery/add_vectors_image) of a grid of vectors
 defined over a random image:
 
-![image: add vectors overlaid on an image](../../images/add_vectors_image.png)
+![image: add vectors overlaid on an image](../../../_static/images/add_vectors_image.png)
 
 Regardless of how the data is passed, we convert it to the `Nx2xD`
 representation internally. This representation is accessible through the
