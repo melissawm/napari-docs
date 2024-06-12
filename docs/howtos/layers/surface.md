@@ -19,7 +19,7 @@ contrast, opacity, colormaps and blending mode. You will also understand how to
 add and manipulate surfaces mostly from the console. There are a few slider
 controls that are available in the GUI.
 
-For more information about layers, refer to [Layers at a glance](../../guides/layers).
+For more information about layers, refer to [Layers at a glance](layers-glance).
 
 ```{note}
 Surface layers can be created only programmatically, i.e. in the console, or
@@ -116,8 +116,8 @@ list of values to associate with each vertex to use alongside a colormap. This
 
 All layers can be rendered in both 2D and 3D. One of the viewer buttons at the
 bottom of the left panel can toggle between these 2 modes.
-When in 2D, the button looks like this: ![image: 2D/3D button](../../images/3D-button.png), ready to switch to 3D mode.
-When in 3D, the button looks like this: ![image: 2D/3D button](../../images/2D-button.png), ready to switch to 2D mode.
+When in 2D, the button looks like this: ![image: 2D/3D button](../../../_static/images/3D-button.png), ready to switch to 3D mode.
+When in 3D, the button looks like this: ![image: 2D/3D button](../../../_static/images/2D-button.png), ready to switch to 2D mode.
 
 The number of dimensions sliders will be 2 or 3 less than the total number of
 dimensions of the layer, allowing you to browse volumetric timeseries data and
@@ -126,9 +126,9 @@ other high dimensional data. An example is these brain surfaces rendered in 3D:
 ```{raw} html
 <figure>
   <video width="100%" controls autoplay loop muted playsinline>
-    <source src="../../_static/images/brain_surface.webm" type="video/webm" />
-    <source src="../../_static/images/brain_surface.mp4" type="video/mp4" />
-    <img src="../../_static/images/brain_surface.png"
+    <source src="../../../_static/images/brain_surface.webm" type="video/webm" />
+    <source src="../../../_static/images/brain_surface.mp4" type="video/mp4" />
+    <img src="../../../_static/images/brain_surface.png"
       title="Your browser does not support the video tag"
       alt="Brain surface in 3D view."
     >

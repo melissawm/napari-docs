@@ -111,8 +111,8 @@ html_theme_options = {
     "navbar_persistent": [],
     "header_links_before_dropdown": 6,
     "secondary_sidebar_items": ["page-toc"],
-    "pygment_light_style": "napari",
-    "pygment_dark_style": "napari",
+    "pygments_light_style": "napari",
+    "pygments_dark_style": "napari",
     "announcement": "https://napari.org/dev/_static/announcement.html",
     "back_to_top_button": False,
 }
@@ -125,8 +125,8 @@ html_context = {
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
-html_logo = "images/logo.png"
+html_static_path = ['../_static']
+html_logo = "../_static/images/logo.png"
 html_sourcelink_suffix = ''
 html_title = 'napari'
 
@@ -171,6 +171,10 @@ intersphinx_mapping = {
         'http://app-model.readthedocs.io/en/latest/',
         'http://app-model.readthedocs.io/en/latest/objects.inv',
     ],
+    'napari-dev': (  # for napari unversioned pages/development docs
+        'https://melissawm.github.io',
+        (None, '../unversioned/dev_objects.inv')
+    )
 }
 
 myst_enable_extensions = [
@@ -221,7 +225,7 @@ pygments_style = 'solarized-dark'
 suppress_warnings = ['myst.header', 'etoc.toctree']
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ['../_templates']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -288,7 +292,7 @@ sphinx_gallery_conf = {
     'gallery_dirs': 'gallery',  # path to where to save gallery generated output
     'filename_pattern': '/*.py',
     'ignore_pattern': 'README.rst|/*_.py',
-    'default_thumb_file': Path(__file__).parent / 'images' / 'logo.png',
+    'default_thumb_file': Path(__file__).parent.parent / '_static' / 'images' / 'logo.png',
     'plot_gallery': "'True'",  # https://github.com/sphinx-gallery/sphinx-gallery/pull/304/files
     'download_all_examples': False,
     'min_reported_time': 10,

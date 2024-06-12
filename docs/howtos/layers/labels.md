@@ -75,7 +75,7 @@ layer:
 
   Use this tool to manually erase a label on the `labels layer`. Other layers
   will not be affected. The label eraser tool looks like this:
-  ![image: eraser tool](../../images/labels-layer-eraser.png)
+  ![image: eraser tool](../../../_static/images/labels-layer-eraser.png)
 
 * **Paintbrush**
 
@@ -306,9 +306,9 @@ common editing tasks on connected components (keep the `contiguous` box checked)
   ```{raw} html
   <figure>
     <video width="100%" controls autoplay loop muted playsinline>
-      <source src="../../_static/images/draw_component.webm" type="video/webm" />
-      <source src="../../_static/images/draw_component.mp4" type="video/mp4" />
-      <img src="../../_static/images/draw_component.png"
+      <source src="../../../_static/images/draw_component.webm" type="video/webm" />
+      <source src="../../../_static/images/draw_component.mp4" type="video/mp4" />
+      <img src="../../../_static/images/draw_component.png"
         title="Your browser does not support the video tag"
         alt="Using the paintbrush and fill bucket tools to draw a connected component."
       >
@@ -326,9 +326,9 @@ common editing tasks on connected components (keep the `contiguous` box checked)
   ```{raw} html
   <figure>
     <video width="100%" controls autoplay loop muted playsinline>
-      <source src="../../_static/images/delete_label.webm" type="video/webm" />
-      <source src="../../_static/images/delete_label.mp4" type="video/mp4" />
-      <img src="../../_static/images/delete_label.png"
+      <source src="../../../_static/images/delete_label.webm" type="video/webm" />
+      <source src="../../../_static/images/delete_label.mp4" type="video/mp4" />
+      <img src="../../../_static/images/delete_label.png"
         title="Your browser does not support the video tag"
         alt="Deleting selected labels."
       >
@@ -345,9 +345,9 @@ common editing tasks on connected components (keep the `contiguous` box checked)
   ```{raw} html
   <figure>
     <video width="100%" controls autoplay loop muted playsinline>
-      <source src="../../_static/images/merge_labels.webm" type="video/webm" />
-      <source src="../../_static/images/merge_labels.mp4" type="video/mp4" />
-      <img src="../../_static/images/merge_labels.png"
+      <source src="../../../_static/images/merge_labels.webm" type="video/webm" />
+      <source src="../../../_static/images/merge_labels.mp4" type="video/mp4" />
+      <img src="../../../_static/images/merge_labels.png"
         title="Your browser does not support the video tag"
         alt="Selecting a label and merging with a connecting label."
       >
@@ -362,9 +362,9 @@ common editing tasks on connected components (keep the `contiguous` box checked)
   ```{raw} html
   <figure>
     <video width="100%" controls autoplay loop muted playsinline>
-      <source src="../../_static/images/split_label.webm" type="video/webm" />
-      <source src="../../_static/images/split_label.mp4" type="video/mp4" />
-      <img src="../../_static/images/split_label.png"
+      <source src="../../../_static/images/split_label.webm" type="video/webm" />
+      <source src="../../../_static/images/split_label.mp4" type="video/mp4" />
+      <img src="../../../_static/images/split_label.png"
         title="Your browser does not support the video tag"
         alt="Using the paintbrush tool to split a label into two."
       >
@@ -501,8 +501,8 @@ where the data is represented as a multiscale image is not editable.
 
 All layers can be rendered in both 2D and 3D. One of the viewer buttons at the
 bottom of the left panel can toggle between these 2 modes.
-When in 2D, the button looks like this: ![image: 2D/3D button](../../images/3D-button.png), ready to switch to 3D mode.
-When in 3D, the button looks like this: ![image: 2D/3D button](../../images/2D-button.png), ready to switch to 2D mode.
+When in 2D, the button looks like this: ![image: 2D/3D button](../../../_static/images/3D-button.png), ready to switch to 3D mode.
+When in 3D, the button looks like this: ![image: 2D/3D button](../../../_static/images/2D-button.png), ready to switch to 2D mode.
 
 The number of dimensions sliders will be 2 or 3 less than the total number of
 dimensions of the layer, allowing you to browse volumetric timeseries data and

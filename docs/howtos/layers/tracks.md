@@ -18,7 +18,7 @@ kernelspec:
 In this document, you will learn about the `napari` `tracks` layer, including
 displaying tracks and defining relationships between tracks.
 
-For more information about layers, refer to [Layers at a glance](../../guides/layers).
+For more information about layers, refer to [Layers at a glance](layers-glance).
 
 ```{note}
 Tracks layers can be created only programmatically, i.e. in the console, using a
@@ -80,9 +80,9 @@ napari.run()
 ```{raw} html
 <figure>
   <video width="100%" controls autoplay loop muted playsinline>
-    <source src="../../_static/images/tracks_simple_demo.webm" type="video/webm" />
-    <source src="../../_static/images/tracks_simple_demo.mp4" type="video/mp4" />
-    <img src="../../_static/images/tracks_simple_demo.png"
+    <source src="../../../_static/images/tracks_simple_demo.webm" type="video/webm" />
+    <source src="../../../_static/images/tracks_simple_demo.mp4" type="video/mp4" />
+    <img src="../../../_static/images/tracks_simple_demo.png"
       title="Your browser does not support the video tag"
       alt="Tracks simple demo."
     >
@@ -263,8 +263,8 @@ properties of the tracks (e.g., the track color).
 
 All layers can be rendered in both 2D and 3D. One of the viewer buttons at the
 bottom of the left panel can toggle between these 2 modes.
-When in 2D, the button looks like this: ![image: 2D/3D button](../../images/3D-button.png), ready to switch to 3D mode.
-When in 3D, the button looks like this: ![image: 2D/3D button](../../images/2D-button.png), ready to switch to 2D mode.
+When in 2D, the button looks like this: ![image: 2D/3D button](../../../_static/images/3D-button.png), ready to switch to 3D mode.
+When in 3D, the button looks like this: ![image: 2D/3D button](../../../_static/images/2D-button.png), ready to switch to 2D mode.
 
 The number of dimensions sliders will be 2 or 3 less than the total number of
 dimensions of the layer, allowing you to browse volumetric timeseries data and
@@ -291,9 +291,9 @@ Additionally, we can adjust the width of the track in the GUI using the
 ```{raw} html
 <figure>
   <video width="100%" controls autoplay loop muted playsinline>
-    <source src="../../_static/images/tracks_tail_width.webm" type="video/webm" />
-    <source src="../../_static/images/tracks_tail_width.mp4" type="video/mp4" />
-    <img src="../../_static/images/tracks_tail_width.png"
+    <source src="../../../_static/images/tracks_tail_width.webm" type="video/webm" />
+    <source src="../../../_static/images/tracks_tail_width.mp4" type="video/mp4" />
+    <img src="../../../_static/images/tracks_tail_width.png"
       title="Your browser does not support the video tag"
       alt="Changing tracks width using the tail width slider."
     >
@@ -325,9 +325,9 @@ length" slider in the `tracks` layer controls.
 ```{raw} html
 <figure>
   <video width="100%" controls autoplay loop muted playsinline>
-    <source src="../../_static/images/tracks_tail_length.webm" type="video/webm" />
-    <source src="../../_static/images/tracks_tail_length.mp4" type="video/mp4" />
-    <img src="../../_static/images/tracks_tail_length.png"
+    <source src="../../../_static/images/tracks_tail_length.webm" type="video/webm" />
+    <source src="../../../_static/images/tracks_tail_length.mp4" type="video/mp4" />
+    <img src="../../../_static/images/tracks_tail_length.png"
       title="Your browser does not support the video tag"
       alt="Changing tracks length using the tail width slider."
     >
@@ -383,9 +383,9 @@ napari.run()
 ```{raw} html
 <figure>
   <video width="100%" controls autoplay loop muted playsinline>
-    <source src="../../_static/images/tracks_color_by.webm" type="video/webm" />
-    <source src="../../_static/images/tracks_color_by.mp4" type="video/mp4" />
-    <img src="../../_static/images/tracks_color_by.png"
+    <source src="../../../_static/images/tracks_color_by.webm" type="video/webm" />
+    <source src="../../../_static/images/tracks_color_by.mp4" type="video/mp4" />
+    <img src="../../../_static/images/tracks_color_by.png"
       title="Your browser does not support the video tag"
       alt="Selecting tracks by the time property and changing the color."
     >
@@ -401,9 +401,9 @@ this example in [](../../gallery/tracks_3d)
 ```{raw} html
 <figure>
   <video width="100%" controls autoplay loop muted playsinline>
-    <source src="../../_static/images/tracks_3d_t.webm" type="video/webm" />
-    <source src="../../_static/images/tracks_3d_t.mp4" type="video/mp4" />
-    <img src="../../_static/images/tracks_3d_t.png"
+    <source src="../../../_static/images/tracks_3d_t.webm" type="video/webm" />
+    <source src="../../../_static/images/tracks_3d_t.mp4" type="video/mp4" />
+    <img src="../../../_static/images/tracks_3d_t.png"
       title="Your browser does not support the video tag"
       alt="3D rendering of tracks."
     >
