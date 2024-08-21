@@ -1,3 +1,8 @@
+"""Creates documentation tables for guides/events_reference.md
+
+Walks through all modules in napari, and extracts docstrings for all objects
+subclassing from EventedModel.
+"""
 import ast
 import inspect
 from dataclasses import dataclass
@@ -110,6 +115,14 @@ def iter_evented_model_events(module: ModuleType = napari) -> Iterator[Ev]:
             for name, field_ in kls.__fields__.items():
                 finfo = field_.field_info
                 if finfo.allow_mutation:
+                    if mod==napari.viewer:
+                        print("=============================================")
+                        print(f"mod = {mod}")
+                        print(f"kls = {kls}")
+                        print(f"name = {name}")
+                        print(f"field_ = {field_}")
+                        print(f"docs = {docs.get(name)}")
+                        print("=============================================")
                     descr = (
                         f"{finfo.title.lower()}"
                         if finfo.title
@@ -137,6 +150,7 @@ def iter_evented_container_events(
                         # skip private emitters
                         continue
                     name = 'selection.' + name
+                    print(f"selection: {name}")
                     descr = docs.get(name)
                     yield Ev(name, kls, descr, type_=None)
 
@@ -243,33 +257,35 @@ def main():
         for ev in iter_evented_model_events()
         if ev.access_at()
     ]
+    for row in rows:
+        print(row)
     table1 = table_repr(rows, padding=2, header=HEADER, divide_rows=False)
     (DOCS / 'guides' / '_viewer_events.md').write_text(table1)
 
     # Do LayerList events
-    rows = [
-        ev.layer_row()[2:]
-        for ev in iter_evented_container_events(
-            napari, container_class=LayerList
-        )
-        if ev.access_at()
-    ]
-    table2 = table_repr(rows, padding=2, header=HEADER, divide_rows=False)
-    (DOCS / 'guides' / '_layerlist_events.md').write_text(table2)
+    # rows = [
+    #     ev.layer_row()[2:]
+    #     for ev in iter_evented_container_events(
+    #         napari, container_class=LayerList
+    #     )
+    #     if ev.access_at()
+    # ]
+    # table2 = table_repr(rows, padding=2, header=HEADER, divide_rows=False)
+    # (DOCS / 'guides' / '_layerlist_events.md').write_text(table2)
 
     # Do layer events
-    HEADER = [
-        'Class',
-        'Event',
-        'Description',
-        'Event.value type',
-    ]
-    rows = [
-        [ev.layer_row()[0]] + ev.layer_row()[2:] for ev in iter_layer_events()
-    ]
-    rows = merge_image_and_label_rows(rows)
-    table3 = table_repr(rows, padding=2, header=HEADER, divide_rows=False)
-    (DOCS / 'guides' / '_layer_events.md').write_text(table3)
+    # HEADER = [
+    #     'Class',
+    #     'Event',
+    #     'Description',
+    #     'Event.value type',
+    # ]
+    # rows = [
+    #     [ev.layer_row()[0]] + ev.layer_row()[2:] for ev in iter_layer_events()
+    # ]
+    # rows = merge_image_and_label_rows(rows)
+    # table3 = table_repr(rows, padding=2, header=HEADER, divide_rows=False)
+    # (DOCS / 'guides' / '_layer_events.md').write_text(table3)
 
 
 if __name__ == '__main__':
