@@ -115,7 +115,7 @@ def iter_evented_model_events(module: ModuleType = napari) -> Iterator[Ev]:
             for name, field_ in kls.__fields__.items():
                 finfo = field_.field_info
                 if finfo.allow_mutation:
-                    if mod==napari.viewer:
+                    if mod == napari.viewer:
                         print("=============================================")
                         print(f"mod = {mod}")
                         print(f"kls = {kls}")
