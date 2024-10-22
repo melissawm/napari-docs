@@ -124,11 +124,11 @@ jobs:
           # When you use deploy_key, set your private key to the repository which
           # includes this action as a secret, and set your public key to your external repository.
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: napari/napari.github.io
+          external_repository: melissawm/napari.github.io
           publish_dir: ./html
           publish_branch: gh-pages
           destination_dir: ${{ github.event.inputs.target_directory || 'dev' }}
-          cname: napari.org
+          #cname: napari.org
           keep_files: true
 
       # Because we are using two deploy actions, we need to reset the ssh-agent
@@ -152,18 +152,18 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: napari/napari.github.io
+          external_repository: melissawm/napari.github.io
           publish_dir: ./html
           publish_branch: gh-pages
           destination_dir: ${{ github.event.inputs.target_directory || github.event.release.tag_name }}
-          cname: napari.org
+          #cname: napari.org
           keep_files: true
 
       - name: Set up stable symlink
         if: ((github.event_name == 'release' && !contains(github.event.release.tag_name, 'rc')) || (github.event_name == 'workflow_dispatch' && github.event.inputs.target_directory != 'dev'))
         uses: convictional/trigger-workflow-and-wait@v1.6.5
         with:
-          owner: napari
+          owner: melissawm
           repo: napari.github.io
           github_token: ${{ secrets.WORKFLOW_PAT }}
           workflow_file_name: symlink-stable.yml
