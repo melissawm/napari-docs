@@ -79,7 +79,7 @@ jobs:
       - name: Update version switcher (on new tag)
         if: ((github.event_name == 'release' && !contains(github.event.release.tag_name, 'rc')) || (github.event_name == 'workflow_dispatch' && github.event.inputs.target_directory != 'dev'))
         run: |
-          python docs/_scripts/update_version_switcher.py ${{ github.event.inputs.target_directory || github.event.release.tag_name }}
+          python docs/_scripts/update_switcher.py ${{ github.event.inputs.target_directory || github.event.release.tag_name }}
 
       - name: Build Docs
         uses: aganders3/headless-gui@v2
