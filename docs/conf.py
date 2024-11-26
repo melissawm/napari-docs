@@ -233,6 +233,7 @@ myst_substitutions = {
 myst_footnote_transition = False
 
 nb_output_stderr = 'show'
+nb_execution_mode = "off"
 
 panels_add_bootstrap_css = False
 pygments_style = 'solarized-dark'
@@ -314,7 +315,7 @@ gen_rst.EXAMPLE_HEADER = """
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_{1}>`
-        to download the full example as a Python script or as a
+        to download the full example anbs a Python script or as a
         Jupyter notebook.{2}
 
 .. rst-class:: sphx-glr-example-title
